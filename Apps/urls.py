@@ -1,7 +1,8 @@
 from django.urls import path
-from Apps.views import curso, entregable
+from Apps.views import curso, entregable, inicio
 
 urlpatterns = [
-    path('Curso/', curso),
-    path('Entregable/',entregable)
+    path('Curso/', curso, name='AppsCurso'),
+    path('Entregable/',entregable, name='AppsEntregable'),
+    path('', inicio)
 ]
