@@ -1,10 +1,16 @@
 from django.shortcuts import render
 from Apps.models import Curso, Entregable
-from datetime import datetime
+import datetime
+
+def inicio(request):
+    contexto = {
+        'valor1': 'este es un valor'
+    }
+    return render(request, 'index.html', contexto)
 
 def curso(request):
     curso1 = Curso(nombre='Python', camada=31095)
-    #curso1.save()
+    curso1.save()
     contexto = {
         'curso': curso1,
     }
@@ -17,9 +23,9 @@ def entregable(request):
     entregable1 = Entregable(
         nombre='Luis',
         FechaDeEntrega=datetime.date(year=year, month=month, day=day),
-        entregado=True
+        Entregado=True
     )
-    #entregable1.save()
+    entregable1.save()
     contexto ={
         'entregable': entregable1
     }
