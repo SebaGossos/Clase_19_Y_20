@@ -4,5 +4,5 @@ from Apps.views import curso, entregable, inicio
 urlpatterns = [
     path('Curso/', curso, name='AppsCurso'),
     path('Entregable/',entregable, name='AppsEntregable'),
-    path('', inicio)
+    path('', inicio, name='AppsInicio')
 ]
