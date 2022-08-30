@@ -2,7 +2,7 @@ from django.db import models
 
 class Curso(models.Model):
     nombre = models.CharField(max_length=40)
-    camada = models.IntegerField()
+    camada = models.IntegerField(unique=True)
 
 class Estudiantes(models.Model):
     nombre = models.CharField(max_length=33)
