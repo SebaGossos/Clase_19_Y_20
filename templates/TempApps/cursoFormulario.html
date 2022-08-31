@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% block title %}
+Curso Formulario
+{% endblock %}
+
+{% block inicio %}
+
+<form action="" method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <!-- <p>Curso: <input type="text" name="curso"></p>
+        <p>Camada: <input type="number" name="camada"></p> -->
+
+        <input type="submit" value="Enviar">
+</form>
+
+{% for curso in cursos %}
+
+        El nombre del curso es {{ curso.nombre }} con la camada {{ curso.camada }}<br>
+
+
+
+{% endfor %}
+
+{% endblock %}
