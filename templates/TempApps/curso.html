@@ -6,7 +6,7 @@ Curso
 
 {% block inicio %}
 
-{% for curso in cursos %}
+{% for curso in object_list %}
         El nombre del curso es {{ curso.nombre }} con la camada {{ curso.camada }}
         <a href={% url 'AppsEliminarCurso' curso.camada %}>-X-</a>
         <a href={% url 'AppsEditarCurso' curso.camada %}>-EDITAR-</a><br>

@@ -5,11 +5,15 @@ import datetime
 from django.contrib import messages
 import django
 from django.views.generic import ListView
+from django.views.generic.detail import DetailView
 
-class CursoList (ListView):
+class CursoList(ListView):
     model = Curso
     template_name = 'TempApps/curso.html'
 
+# class CursoDetalle(DetailView):
+#     model: Curso
+#     template_name: 
 
 
 def editar_curso(request, camada):
@@ -103,14 +107,14 @@ def inicio(request):
     }
     return render(request, 'index.html', contexto)
 
-def curso(request):
-    lens = len(Curso.objects.all())
-    cursos = Curso.objects.all()[lens-1:lens] # Es para que me traiga en ultimo curso guardado de mi bd
-    cursos = Curso.objects.all()
-    context = {
-       'cursos': cursos
-    }
-    return render(request, 'TempApps/curso.html', context)
+# def curso(request):
+#     lens = len(Curso.objects.all())
+#     # cursos = Curso.objects.all()[lens-1:lens] # Es para que me traiga en ultimo curso guardado de mi bd
+#     cursos = Curso.objects.all()
+#     context = {
+#        'cursos': cursos
+#     }
+#     return render(request, 'TempApps/curso.html', context)
 
 def entregable(request):
     year = 2000
