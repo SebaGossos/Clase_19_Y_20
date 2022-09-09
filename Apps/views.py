@@ -6,8 +6,11 @@ from django.contrib import messages
 import django
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 
-class CursoList(ListView):
+
+class CursoList(LoginRequiredMixin, ListView):
     model = Curso
     template_name = 'TempApps/curso.html'
 
@@ -115,7 +118,7 @@ def inicio(request):
 #        'cursos': cursos
 #     }
 #     return render(request, 'TempApps/curso.html', context)
-
+@login_required
 def entregable(request):
     year = 2000
     month = 10

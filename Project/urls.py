@@ -22,5 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('Apps/', include('Apps.urls')),
     path('', lambda req: redirect('AppsInicio')),
-    path('User/',include('AppUser.urls'))
+    path('User/',include('AppUser.urls')),
 ]

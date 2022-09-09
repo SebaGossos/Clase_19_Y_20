@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+{% block title %}
+{{ name_submit }}
+{% endblock %}
+
+{% block inicio %}
+
+<form action="" method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <!-- <p>Curso: <input type="text" name="curso"></p>
+        <p>Camada: <input type="number" name="camada"></p> -->
+
+        <input type="submit" value={{ name_submit }}>
+</form>
+
+
+
+{% endblock %}
